@@ -1,0 +1,42 @@
+body {
+    background-color: white;
+  }
+
+h3{
+    color: black; 
+    font-style:oblique;
+    font-size: 20px; 
+  }
+input{
+    font-size: 13px;
+    text-align:center
+}
+
+.button{
+    display: inline-block;
+}
+.header {
+    padding: 2px;
+    text-align: center;
+    width: 100%;
+    background: #f865d8;
+    color: rgb(2, 1, 1);
+  }
+
+.main{
+    font-style:oblique;
+    text-align: center;
+    color: rgb(2, 1, 1);
+    font-size: 18px;
+  }
+
+.footer {
+    position: absolute;
+    bottom:0;
+    padding: 2px;
+    width: 100%;
+    text-align: center;
+    background: #f865d8;
+    color: rgb(8, 1, 1);
+    font-size: 18px;
+  }

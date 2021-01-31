@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Training</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="header">
+            <h1>Bootcamp Training</h1>  
+    </div>
+    <div class="main">
+        <div class="Task01">
+            <h3>01. Running Timer</h3>
+            <div class="Text01">
+                <div>Time: 
+                    <span id="time">0</span>
+                    <span>seconds</span>
+                </div>
+                <form>
+                    <input type="button" class="button" value="Start" onclick="start();"><br/>
+                    <input type="button" class="button" value="Stop"  onclick="stop();"><br/>
+                </form>           
+            </div>
+        </div>
+        <br/>
+        <div class="Task02">
+            <div class="Text02">
+                <h3>02. Increments a Counter</h3>
+            </div>
+            <div>Clicked
+                <input id="inc" value="0"></input>
+                <span>times.</span>
+            </div>
+            <div>
+                <input type="button" value="Click Me" onclick="buttonClick();"></input>
+            </div>
+        </div>
+        <br/>
+        <div class="Task03">
+            <form action="/sum" method="POST">
+                <div class="Text03">
+                    <h3>03. Adding 10</h3>
+                </div>
+                <div>
+                    Enter number : <input type="text" id="txt10" name="text10"></input><br/>
+                </div>
+                <input class="btn" type="submit" name="mysum" value="The Total Sum" onclick="mySum()"></input> : <span name="sum" id="sum"></span>
+            </form>
+        </div>
+        <br/>
+        <div class="Task04">
+            <form action="/total" method="POST">
+                <div class="Text04">
+                    <h3>04. Adding Two Number</h3> 
+                </div>
+                <div>
+                    Enter 01 number : <input type="text" id="txt1" name="text1"></input>
+                    <br/>Enter 02 number : <input type="text" id="txt2" name="text2"></input>
+                    <br/><input class="btn" type="submit" name="mytotal" value="The Total Number" onclick="myTotal()"></input> : <span name="total" id="total"></span>
+                </div>
+            </form>
+        </div>
+        <script>
+                var timeElapsed = 0;
+                var timerID = -1;
+
+                function tick() {
+                    timeElapsed++
+                    document.getElementById("time").innerHTML = timeElapsed;
+                }               
+
+                function start() {
+                    if(timerID == -1){
+                    timerID = setInterval(tick, 100);
+                    }
+                }
+
+                function stop() {
+                    if(timerID != -1){
+                    clearInterval(timerID)
+                    timerID = -1
+                    }
+                }
+
+                var i = 0;
+                function buttonClick() {
+                    i++;
+                    document.getElementById("inc").value = i;
+                    }           
+
+                function mySum() {
+                    var a = document.getElementById("txt10").value;
+                    var b = parseInt(a) + 10;
+                    document.getElementById("sum").innerHTML = b;
+                }
+
+                function myTotal() {
+                    var y = document.getElementById("txt1").value;
+                    var z = document.getElementById("txt2").value;
+                    var x = parseInt(y) + parseInt(z);
+                    document.getElementById("total").innerHTML = x;
+                }
+
+                function getData(){
+                   //gettting the values
+                    var sum = document.getElementById("sum").value;
+                    var total= document.getElementById("total").value; 
+                
+                    //saving the values in local storage
+                    localStorage.setItem("txtSum", sum)
+                    localStorage.setItem("txtTotal", total)
+                }
+        </script>
+        <br/>
+    </div> 
+<div class="footer">All rights reserved By Md Arafat Hossain</div>
+</body>
+</html> 

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Training 03</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div>The Total Number is:  <span id="total"></span></div>
+
+    <script>
+        var pathArray = window.location.pathname.split('/')
+        var x = pathArray[1];
+		var y = pathArray[2];
+		var total=0;
+            total=Number(x)+Number(y);
+        document.getElementById("total").innerHTML = total;   
+     </script>
+    
+</body>
